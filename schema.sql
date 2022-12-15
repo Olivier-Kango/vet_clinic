@@ -9,6 +9,6 @@ CREATE TABLE animals (
     weight_kg DECIMAL NOT NULL
 );
 
--- Query and update animals table
+-- Update animals table
 ALTER TABLE animals
 ADD COLUMN species VARCHAR(100);
