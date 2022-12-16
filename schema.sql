@@ -13,3 +13,30 @@ CREATE TABLE animals (
 -- Update animals table
 ALTER TABLE animals
 ADD COLUMN species VARCHAR(100);
+
+-- Multiple tables
+CREATE TABLE owners (
+    id BIGSERIAL PRIMARY KEY NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+CREATE TABLE species (
+    id BIGSERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE animals  
+DROP COLUMN species;
+
+ALTER TABLE animals  
+ADD COLUMN species_id INT,
+ADD CONSTRAINT fk_species
+FOREIGN KEY (species_id)
+REFERENCES species(id);
+
+ALTER TABLE animals 
+ADD COLUMN owner_id INT,
+ADD CONSTRAINT fk_owners
+FOREIGN KEY (owner_id)
+REFERENCES owners(id);
