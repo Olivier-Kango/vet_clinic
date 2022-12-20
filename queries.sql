@@ -238,3 +238,10 @@ ORDER BY count DESC LIMIT 1;
 SELECT COUNT (*) FROM visits WHERE animal_id = 4;
 CREATE INDEX visits_animal_id
 ON visits(animal_id);
+
+
+-- decrease the execution time
+SELECT * FROM visits where vet_id = 2;
+CREATE INDEX visits_vet_id ON visits(vet_id);
+
+
