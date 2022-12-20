@@ -244,4 +244,8 @@ ON visits(animal_id);
 SELECT * FROM visits where vet_id = 2;
 CREATE INDEX visits_vet_id ON visits(vet_id);
 
+-- decrease the execution time
+SELECT * FROM owners where email = 'owner_18327@mail.com';
+CREATE INDEX owners_email ON owners(email);
+
 
