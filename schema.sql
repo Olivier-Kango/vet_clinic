@@ -17,8 +17,8 @@ ADD COLUMN species VARCHAR(100);
 -- Multiple tables
 CREATE TABLE owners (
     id BIGSERIAL PRIMARY KEY NOT NULL,
-    full_name VARCHAR(100) NOT NULL,
-    age INT NOT NULL
+    full_name VARCHAR(100),
+    age INT
 );
 
 CREATE TABLE species (
