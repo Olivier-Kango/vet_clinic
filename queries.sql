@@ -235,7 +235,6 @@ GROUP BY species.name
 ORDER BY count DESC LIMIT 1;
 
 -- Find a way to decrease the execution time of the first query. Look for hints in the previous lessons.
-SELECT COUNT (*) FROM visits WHERE animal_id = 1;
-
+SELECT COUNT (*) FROM visits WHERE animal_id = 4;
 CREATE INDEX visits_animal_id
 ON visits(animal_id);
