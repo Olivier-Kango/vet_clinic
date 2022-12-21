@@ -71,3 +71,19 @@ CREATE TABLE visits (
     CONSTRAINT fk_animals
     FOREIGN KEY (animal_id) REFERENCES animals(id)
 );
+
+-- Add an email column to your owners table
+ALTER TABLE owners
+ADD COLUMN email VARCHAR(120);
+
+-- Drop visits table
+DROP TABLE visits;
+
+-- Create visits table
+CREATE TABLE visits (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    animal_id INT REFERENCES animals(id),
+    vet_id INT REFERENCES vets(id),
+    date_of_visit DATE,
+    PRIMARY KEY(id)
+);
